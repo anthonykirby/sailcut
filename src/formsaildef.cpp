@@ -582,13 +582,15 @@ bool CFormSailDef::check()
 
         /** check main sail foot length against Luff*/
         L2 = (long)(saildef->luffL);
-        if (saildef->footL > L2)
-        {
-            flag = false;
-            saildef->footL = L2;
-            txtFootLen->setPalette(palHi);
-        }
-        else if (saildef->footL < int(L2/10))
+/* [APK] we allow a sail with foot > luff, e.g. for lug sail
+ *         if (saildef->footL > L2)
+ *        {
+ *           flag = false;
+ *           saildef->footL = L2;
+ *           txtFootLen->setPalette(palHi);
+ *       }
+ *       else*/ 
+		if (saildef->footL < int(L2/10))
         {
             flag = false;
             saildef->footL = 1+ int(L2/10);
@@ -844,14 +846,16 @@ bool CFormSailDef::check()
         break;
     }
 
-    if (saildef->footL > saildef->leechL)
-    {
-        flag=false;
-        txtLeechLen->setPalette( palRel );
-        txtFootLen->setPalette( palHi );
-        saildef->footL = (saildef->leechL) -1;
-    }
-    else if (saildef->footL < L2)
+/* [APK] we allow foot to be longer than leech (e.g. for lug sail)
+ *  if (saildef->footL > saildef->leechL)
+ *   {
+ *       flag=false;	// fails
+ *       txtLeechLen->setPalette( palRel );
+ *       txtFootLen->setPalette( palHi );
+ *       saildef->footL = (saildef->leechL) -1;
+ *   }
+ *   else*/ 
+	if (saildef->footL < L2)
     {
         flag=false;
         txtLuffLen->setPalette( palRel );
