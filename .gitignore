@@ -1,0 +1,23 @@
+Makefile
+src/Makefile
+
+bin/*
+nbproject/
+share/
+.qmake.stash
+
+# Qt temps
+src/moc_*.cpp
+src/moc_predefs.h
+src/ui_form*defbase.h
+tests/geocpp/moc_predefs.h
+
+# objects
+src/*.o
+tests/geocpp/*.o
+
+#?
+tests/geocpp/target_wrapper.sh
+tests/geocpp/tst_geocpp
+tests/geocpp/tst_geocpp.moc
+
