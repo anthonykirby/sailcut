@@ -18,7 +18,7 @@ This is a Qt app and the build system relies on `qmake`, which comes with Qt dis
 
 - macOS: `brew install qt`
 - Windows: download an [official release](http://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe) (LGPLv3 license)
-- Linux: part of QT environment, so install qt5 development tools, e.g. Fedora `dnf install qt5-devel` (then for Fedora, run `qmake-qt5` instead of `qmake`)
+- Linux: install Qt5 development tools, e.g. Fedora `dnf install qt5-devel` (then for Fedora, run `qmake-qt5` instead of `qmake`)
 
 From the root of the repo, run:
 
