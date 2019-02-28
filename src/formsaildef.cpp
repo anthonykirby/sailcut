@@ -612,12 +612,14 @@ bool CFormSailDef::check()
             saildef->gaffL= L1;
             flag = false;
         }
-        else if (saildef->gaffL > L2)
-        {
-            txtGaffLen->setPalette(palHi);
-            saildef->gaffL= L2;
-            flag = false;
-        }
+/* [APK] allow gaff to be longer than foot
+ *        else if (saildef->gaffL > L2)	// this one
+ *        {
+ *            txtGaffLen->setPalette(palHi);
+ *            saildef->gaffL= L2;
+ *            flag = false;
+ *        }
+ */
         else
         {
             txtGaffLen->setPalette(palStd);
